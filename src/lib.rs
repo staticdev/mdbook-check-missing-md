@@ -17,7 +17,7 @@ pub fn run(ctx: &RenderContext) -> Result<(), Error> {
     collect_md_files(&root, &mut all_md_files)?;
 
     // Exclude SUMMARY.md from the set of markdown files
-    all_md_files.remove(&summary_path);
+    all_md_files.remove(&summary_path.canonicalize()?);
 
     let summary_md_files = get_summary_md_files(&summary_path)?;
 

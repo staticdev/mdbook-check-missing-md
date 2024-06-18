@@ -1,6 +1,6 @@
 [package]
 name = "mdbook-check-missing-md"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["staticdev <staticdev-support@proton.me>"]
 description = "A backend for `mdbook` which will find Markdowns you forgot on SUMMARY.md."
 license = "MIT"
@@ -20,5 +20,4 @@ serde_json = "1.0"
 structopt = "0.3"
 
 [dev-dependencies]
-assert_cmd = "2.0"
 tempfile = "3.3"

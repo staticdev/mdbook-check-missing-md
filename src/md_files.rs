@@ -11,7 +11,7 @@ pub fn collect_md_files(dir: &Path, md_files: &mut HashSet<PathBuf>) -> Result<(
         if path.is_dir() {
             collect_md_files(&path, md_files)?;
         } else if path.extension().and_then(|ext| ext.to_str()) == Some("md") {
-            md_files.insert(path);
+            md_files.insert(path.canonicalize()?);
         }
     }
     Ok(())
